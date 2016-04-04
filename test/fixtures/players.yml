@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyText
+  last_name: MyText
+  has_left_the_country: false
+  is_goalie: false
+
+two:
+  first_name: MyText
+  last_name: MyText
+  has_left_the_country: false
+  is_goalie: false
