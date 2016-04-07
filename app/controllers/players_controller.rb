@@ -1,20 +1,25 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
+  respond_to :html
+
   # GET /players
   # GET /players.json
   def index
     @players = Player.all
+    respond_with(@players)
   end
 
   # GET /players/1
   # GET /players/1.json
   def show
+    respond_with(@player)
   end
 
   # GET /players/new
   def new
     @player = Player.new
+    respond_with(@player)
   end
 
   # GET /players/1/edit
@@ -26,14 +31,10 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
 
-    respond_to do |format|
-      if @player.save
-        format.html { redirect_to @player, notice: 'Player was successfully created.' }
-        format.json { render :show, status: :created, location: @player }
-      else
-        format.html { render :new }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
-      end
+    if @player.save
+      redirect_to player_path(@player)
+    else
+      respond_with @player
     end
   end
 

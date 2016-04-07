@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :users
 
-  resources :players
+  resources :players do
+    resources :notes
+    resources :ratings
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
