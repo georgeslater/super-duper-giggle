@@ -1,16 +1,54 @@
-<% if @players_to_create.length > 0 %>
-	<div class="alert alert-danger" role="alert">
-	  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-		Error!  Error! The following players have not been found in the database:
-		<br/><br/>
-		<% @players_to_create.each do | player_to_create | %>
-			<div><%= player_to_create %></div>
+<div class="wrapper">
+	<div class="player-list-wrapper">
+		<% if @players_to_create.length > 0 %>
+			<div class="alert alert-danger" role="alert">
+			  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Error!  Error! The following players have not been found in the database:
+				<br/><br/>
+				<% @players_to_create.each do | player_to_create | %>
+					<div><%= player_to_create %></div>
+				<% end %>
+				<br/>
+				Please create them and try again.
+			<div>
+		<% else %>
+			<table class="table player-going-table">
+				<caption>Players going:</caption>
+				<thead>
+					<th>Name</th>
+					<th>Rating</th>
+					<th>Goalie</th>
+				</thead>
+				<tbody>
+					<% @players_to_show.each do | player_to_show | %>
+						<tr>
+							<td><%= link_to player_to_show.name, player_path(player_to_show) %></td>
+							<td><%= player_to_show.avg_player_rating %></td>
+							<td>
+								<% if player_to_show.is_goalie %>
+									&#10004;
+								<% end %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<!--<div class="pitch"></div>-->
 		<% end %>
-		<br/>
-		Please create them and try again.
-	<div>
-	<div class="pitch">
 	</div>
-<% else %>
-	
-<% end %>
+	<div class="teams-wrapper">
+		<div class="checkbox">
+			<label for="ensure_goalies">
+				<span>Ensure there is at least one goalie on each side</span>
+			</label>
+			<input type="checkbox" id="ensure_goalies" class="pull-right">
+		</div>
+		<div id="max-rating">
+			<label>Maximum rating difference between any two teams</label>
+			<input type="number" step="0.5" min="0" value="5">
+		</div>
+		<div class="generate-btn">
+			<button>Generate my teams, bitch!</button>
+		</div>
+	</div>
+</div>

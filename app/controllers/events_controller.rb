@@ -31,10 +31,10 @@ class EventsController < ApplicationController
 
 			attending.each do | attendee |
 
-				players = Player.find_by name: attendee['name']
+				player = Player.find_by name: attendee['name']
 
-				if players.present? && players.length > 0
-					@players_to_show.push(attendee)
+				if player.present?
+					@players_to_show.push(player)
 				else
 					@players_to_create.push(attendee['name'])
 				end
