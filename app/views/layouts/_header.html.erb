@@ -17,9 +17,12 @@
                 <div id="menuContent" class="collapse navbar-collapse">
                     <div id="siteLinks">
                         <ul id="menuBar" class="nav navbar-nav">
-                            <li class="<%= 'activeTab' if current_page?(main_app.players_path) || current_page?(main_app.root_path) %>">
-                                <%= link_to "Players", main_app.players_path %>
+                            <li class="<%= 'activeTab' if current_page?(main_app.events_path) || current_page?(main_app.root_path) %>">
+                                <%= link_to "Events", main_app.events_path %>
                             </li>
+                            <li class="<%= 'activeTab' if current_page?(main_app.players_path) %>">
+                                <%= link_to "Players", main_app.players_path %>
+                            </li>                    
                         </ul>
                     </div>
                     <div>

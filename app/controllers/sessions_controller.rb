@@ -1,8 +1,9 @@
 class SessionsController < ApplicationController
   def create
     user = User.from_omniauth(env["omniauth.auth"])
+    Rails.logger.debug(user.to_yaml);
     session[:user_id] = user.id
-    redirect_to players_url
+    redirect_to events_url
   end
 
   def destroy

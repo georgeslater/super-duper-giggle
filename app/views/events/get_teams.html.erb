@@ -1,0 +1,16 @@
+<% if @players_to_create.length > 0 %>
+	<div class="alert alert-danger" role="alert">
+	  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		Error!  Error! The following players have not been found in the database:
+		<br/><br/>
+		<% @players_to_create.each do | player_to_create | %>
+			<div><%= player_to_create %></div>
+		<% end %>
+		<br/>
+		Please create them and try again.
+	<div>
+	<div class="pitch">
+	</div>
+<% else %>
+	
+<% end %>

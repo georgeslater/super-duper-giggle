@@ -1,6 +1,5 @@
-#menuBar a {
-  font-size: 22px;
-  font-family: 'Fauna One', serif;
+header{
+	margin-bottom: 100px;
 }
 
 .navbar-header a{
@@ -10,9 +9,24 @@
   	color: white !important;
 }
 
+.container-fluid{
+	background-image:image-url('pitch.jpg');
+}
+
 #menuBar li.activeTab a{
 
-	color: lightskyblue !important;
+	text-decoration: underline;
+}
+
+#menuBar li a{
+	color: orange !important;
+	line-height: 36px;
+	font-size: 22px;
+  	font-family: Tahoma, serif;
+}
+
+#menuBar li a:hover{
+	text-decoration: underline;
 }
 
 @media(min-width: 1024px){
@@ -27,13 +41,11 @@
 		display: none !important;
 	}
 }
-
-@media(max-width: 623px){
 	
-	h1{
+h1{
 
-		font-size: 24px;
-	}
+	font-size: 24px;
+	margin-right: 20px;
 }
 
 @media(max-width: 1024px){
