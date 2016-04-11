@@ -12,6 +12,9 @@
 				Please create them and try again.
 			<div>
 		<% else %>
+			<div>Day: <%= @event.day_of_week %></div>
+			<div>Time: <%= @event.time.to_s %>:00</div>
+			<div># Teams: <span id="num-teams"><%= @event.number_of_teams %></span></div>
 			<table class="table player-going-table">
 				<caption>Players going:</caption>
 				<thead>
@@ -37,6 +40,7 @@
 		<% end %>
 	</div>
 	<div class="teams-wrapper">
+		<div class="alertContainer"></div>
 		<div class="checkbox">
 			<label for="ensure_goalies">
 				<span>Ensure there is at least one goalie on each side</span>
@@ -45,10 +49,13 @@
 		</div>
 		<div id="max-rating">
 			<label>Maximum rating difference between any two teams</label>
-			<input type="number" step="0.5" min="0" value="5">
+			<input type="number" step="0.5" min="0" value="0">
 		</div>
 		<div class="generate-btn">
-			<button>Generate my teams, bitch!</button>
+			<button onclick="generateTeams();">Generate my teams, bitch!</button>
+		</div>
+		<div id="teams">
+
 		</div>
 	</div>
 </div>
