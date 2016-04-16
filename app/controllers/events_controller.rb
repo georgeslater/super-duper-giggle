@@ -14,6 +14,7 @@ class EventsController < ApplicationController
 		Rails.logger.debug(Time.now.to_i)
 		connections = @graph.get_connections('848848561801054', 'events', since: Time.now.to_i)
 		event_id = nil
+		start_time = nil
 
 		connections.each do | connection |
 			Rails.logger.debug('ID! '+connection['id'])
@@ -35,6 +36,8 @@ class EventsController < ApplicationController
 
 				if player.present?
 					@players_to_show.push(player)
+					player.last_active = start_time
+					player.save!
 				else
 					@players_to_create.push(attendee['name'])
 				end

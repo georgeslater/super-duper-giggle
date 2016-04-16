@@ -1,4 +1,9 @@
 /* line 1, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+.wrapper {
+  margin-left: 30px;
+}
+
+/* line 5, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
 .btnCustom {
   width: 75%;
   height: 100px;
@@ -6,14 +11,63 @@
   margin: 20px;
 }
 
-/* line 8, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+/* line 12, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
 .event-text {
   line-height: 85px;
 }
 
-/* line 12, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+/* line 16, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
 .pitch {
   background-image: url(/assets/pitch2-4d45620b96943a01bfda7b9b22a43eb0.jpg);
+  height: 414px;
+  width: 636px;
+}
+
+/* line 22, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+.player-going-table {
+  width: auto !important;
+}
+
+/* line 27, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+.player-going-table td {
+  padding: 5px !important;
+}
+
+/* line 31, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+.player-going-table td:not(:first-child) {
+  text-align: center;
+}
+
+/* line 35, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+.player-list-wrapper {
+  float: left;
+}
+
+/* line 39, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+.teams-wrapper {
+  float: left;
+  margin-left: 40px;
+}
+
+/* line 44, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+#ensure_goalies {
+  margin-left: 10px;
+}
+
+/* line 48, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+.teams-wrapper .checkbox label {
+  padding-left: 0px;
+}
+
+/* line 52, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+.generate-btn {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* line 57, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+#max-rating label {
+  font-weight: normal;
 }
 /* line 1, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
 header {
@@ -78,6 +132,16 @@ h1 {
     display: none;
   }
 }
+/* line 1, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
+#players-container td {
+  vertical-align: middle !important;
+}
+
+/* line 5, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
+.btn-container {
+  float: right;
+  margin-right: 40px;
+}
 /* line 1, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 body {
   background-color: #fff;
@@ -101,38 +165,24 @@ pre {
   font-size: 11px;
 }
 
-/* line 21, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
-a {
-  color: #000;
-}
-/* line 23, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
-a:visited {
-  color: #666;
-}
-/* line 26, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
-a:hover {
-  color: #fff;
-  background-color: #000;
-}
-
-/* line 33, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 22, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-/* line 38, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 27, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 #notice {
   color: green;
 }
 
-/* line 42, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 31, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 48, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 37, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -141,7 +191,7 @@ div.field, div.actions {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 55, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 44, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -152,7 +202,7 @@ div.field, div.actions {
   background-color: #c00;
   color: #fff;
 }
-/* line 65, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 54, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;

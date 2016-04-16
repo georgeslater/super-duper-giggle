@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<div class="picture-xl">
+	<img src="<%= @profile_picture %>"></img>
+</div>
+<h1><%= @player.name %></h1>
 <p>
-  <strong>Name:</strong>
-  <%= @player.name %>
-</p>
-
-<p>
-  <strong>Has left the country:</strong>
-  <%= @player.has_left_the_country %>
+  <strong>Last Active:</strong>
+  <%= @player.last_active %>
 </p>
 
 <p>
@@ -15,5 +14,18 @@
   <%= @player.is_goalie %>
 </p>
 
+<canvas id="rating-placeholder"></canvas>
+
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>
+
+<script>
+	var players = new Array();
+	<% @player.ratings.each do | rating | %>
+	var player = new Object();
+	player.rating = '<%= rating.rating %>';
+	player.ratee = '<%= rating.user.name %>';
+	players.push(player);
+	<% end %>
+	generateRatingCircles();
+</script>

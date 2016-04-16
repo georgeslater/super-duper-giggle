@@ -6,13 +6,41 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all
+    @players = Player.all.order('Name ASC')
+    @player_image_urls = Hash.new
+
+    @graph = Koala::Facebook::API.new(current_user.oauth_token)
+    
+    @pictures = @graph.batch do | batch_api |
+      @players.each do | player |
+        if player.facebook_id.present?
+          batch_api.get_picture(player.facebook_id)
+        end
+      end
+    end  
+
+    i = 0
+
+    @players.each do | player |
+      if player.facebook_id.present?
+        @player_image_urls[player.id] = @pictures[i]
+        i+=1
+      end  
+    end
+
+    Rails.logger.debug(@pictures)
     respond_with(@players)
   end
 
   # GET /players/1
   # GET /players/1.json
   def show
+    @graph = Koala::Facebook::API.new(current_user.oauth_token)
+
+    if @player.facebook_id.present?
+        @profile_picture = @graph.get_picture(@player.facebook_id, { 'type' => 'large' })   
+    end
+    
     respond_with(@player)
   end
 
@@ -70,6 +98,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:name, :has_left_the_country, :is_goalie)
+      params.require(:player).permit(:name, :is_goalie, :facebook_id)
     end
 end
