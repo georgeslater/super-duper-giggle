@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_area :name %>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :facebook_id %><br>
+    <%= f.label :facebook_id %>&nbsp;<span>(Go to <a target="_blank" href="http://findmyfbid.com">findmyfbid.com</a> and enter the Facebook username to get the id)</span><br>
     <%= f.text_field :facebook_id %>
   </div>
   <div class="field">
-    <%= f.label :is_goalie %><br>
+    <%= f.label 'Goalie?' %><br>
     <%= f.check_box :is_goalie %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn btn-info'%>
   </div>
 <% end %>

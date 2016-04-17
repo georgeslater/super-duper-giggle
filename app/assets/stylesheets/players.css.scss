@@ -2,6 +2,10 @@
 	vertical-align: middle !important;
 }
 
+#players-container .center{
+	text-align: center;
+}
+
 .btn-container{
 	float:right;
 	margin-right: 40px;
@@ -10,4 +14,12 @@
 .picture-xl{
 	float:right;
 	margin-right: 40px;
+}
+
+#player-container{
+	margin-left: 30px;
+}
+
+#new-player-container{
+	margin-left: 30px;
 }

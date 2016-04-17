@@ -25,10 +25,10 @@
                             </li>                    
                         </ul>
                     </div>
-                    <div>
+                    <div id="logged-in-container">
                         <% if current_user %>
-						    Welcome <strong><%= current_user.name %></strong>!
-						    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+						    <div>Logged in as <strong><%= current_user.name %></strong></div>
+						    <div><%= link_to "Sign out", signout_path, id: "sign_out" %></div>
 						  <% end %>
                     </div>
                 </div>               

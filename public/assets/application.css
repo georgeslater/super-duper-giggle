@@ -87,11 +87,23 @@ header {
 }
 
 /* line 16, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+#logged-in-container {
+  color: white;
+  float: right;
+}
+
+/* line 21, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+#sign_out {
+  float: right;
+  color: white;
+}
+
+/* line 26, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
 #menuBar li.activeTab a {
   text-decoration: underline;
 }
 
-/* line 21, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+/* line 31, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
 #menuBar li a {
   color: orange !important;
   line-height: 36px;
@@ -99,35 +111,35 @@ header {
   font-family: Tahoma, serif;
 }
 
-/* line 28, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+/* line 38, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
 #menuBar li a:hover {
   text-decoration: underline;
 }
 
 @media (min-width: 1024px) {
-  /* line 34, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+  /* line 44, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
   .loginInfo {
     display: block;
   }
 
-  /* line 39, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+  /* line 49, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
   .signInMobile {
     display: none !important;
   }
 }
-/* line 45, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+/* line 55, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
 h1 {
   font-size: 24px;
   margin-right: 20px;
 }
 
 @media (max-width: 1024px) {
-  /* line 53, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+  /* line 63, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
   .signInMobile {
     display: block;
   }
 
-  /* line 58, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+  /* line 68, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
   .loginInfo {
     display: none;
   }
@@ -138,15 +150,30 @@ h1 {
 }
 
 /* line 5, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
+#players-container .center {
+  text-align: center;
+}
+
+/* line 9, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
 .btn-container {
   float: right;
   margin-right: 40px;
 }
 
-/* line 10, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
+/* line 14, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
 .picture-xl {
   float: right;
   margin-right: 40px;
+}
+
+/* line 19, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
+#player-container {
+  margin-left: 30px;
+}
+
+/* line 23, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
+#new-player-container {
+  margin-left: 30px;
 }
 /* line 1, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 body {

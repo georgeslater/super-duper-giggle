@@ -13,6 +13,16 @@ header{
 	background-image:image-url('pitch.jpg');
 }
 
+#logged-in-container{
+	color:white;
+	float:right;
+}
+
+#sign_out{
+	float:right;
+	color:white;
+}
+
 #menuBar li.activeTab a{
 
 	text-decoration: underline;

@@ -11650,7 +11650,7 @@ function generateTeams(){
 
 					html += '<div class="list-group">';
 
-					html += '<span class="list-group-item active">'+generateRandomName()+'<div style="float:right;">'+teamRatings[i]+'</div></span>';
+					html += '<span class="list-group-item active">'+generateRandomName()+' '+teamRatings[i]+'</span>';
 
 					for(var j = 0; j < teamPlayers[i].length; j++){
 

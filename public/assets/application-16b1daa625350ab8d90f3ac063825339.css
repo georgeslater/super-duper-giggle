@@ -62,9 +62,10 @@
 /* line 52, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
 .generate-btn {
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-/* line 56, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
+/* line 57, /Users/georgeslater/Documents/expat/app/assets/stylesheets/events.css.scss */
 #max-rating label {
   font-weight: normal;
 }
@@ -86,11 +87,23 @@ header {
 }
 
 /* line 16, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+#logged-in-container {
+  color: white;
+  float: right;
+}
+
+/* line 21, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+#sign_out {
+  float: right;
+  color: white;
+}
+
+/* line 26, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
 #menuBar li.activeTab a {
   text-decoration: underline;
 }
 
-/* line 21, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+/* line 31, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
 #menuBar li a {
   color: orange !important;
   line-height: 36px;
@@ -98,38 +111,64 @@ header {
   font-family: Tahoma, serif;
 }
 
-/* line 28, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+/* line 38, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
 #menuBar li a:hover {
   text-decoration: underline;
 }
 
 @media (min-width: 1024px) {
-  /* line 34, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+  /* line 44, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
   .loginInfo {
     display: block;
   }
 
-  /* line 39, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+  /* line 49, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
   .signInMobile {
     display: none !important;
   }
 }
-/* line 45, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+/* line 55, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
 h1 {
   font-size: 24px;
   margin-right: 20px;
 }
 
 @media (max-width: 1024px) {
-  /* line 53, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+  /* line 63, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
   .signInMobile {
     display: block;
   }
 
-  /* line 58, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
+  /* line 68, /Users/georgeslater/Documents/expat/app/assets/stylesheets/header.css.scss */
   .loginInfo {
     display: none;
   }
+}
+/* line 1, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
+#players-container td {
+  vertical-align: middle !important;
+}
+
+/* line 5, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
+#players-container .center {
+  text-align: center;
+}
+
+/* line 9, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
+.btn-container {
+  float: right;
+  margin-right: 40px;
+}
+
+/* line 14, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
+.picture-xl {
+  float: right;
+  margin-right: 40px;
+}
+
+/* line 19, /Users/georgeslater/Documents/expat/app/assets/stylesheets/players.css.scss */
+#player-container {
+  margin-left: 30px;
 }
 /* line 1, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 body {
@@ -154,38 +193,24 @@ pre {
   font-size: 11px;
 }
 
-/* line 21, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
-a {
-  color: #000;
-}
-/* line 23, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
-a:visited {
-  color: #666;
-}
-/* line 26, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
-a:hover {
-  color: #fff;
-  background-color: #000;
-}
-
-/* line 33, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 22, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-/* line 38, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 27, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 #notice {
   color: green;
 }
 
-/* line 42, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 31, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 48, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 37, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -194,7 +219,7 @@ div.field, div.actions {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 55, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 44, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -205,7 +230,7 @@ div.field, div.actions {
   background-color: #c00;
   color: #fff;
 }
-/* line 65, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
+/* line 54, /Users/georgeslater/Documents/expat/app/assets/stylesheets/scaffolds.css.scss */
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;

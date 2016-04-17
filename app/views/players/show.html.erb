@@ -1,31 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div id="player-container">
+	<div class="picture-xl">
+		<img src="<%= @profile_picture %>"></img>
+	</div>
+	<h1><%= @player.name %></h1>
+	<p>
+	  <strong>Last Active:</strong>
+	  <%= @player.last_active %>
+	</p>
 
-<div class="picture-xl">
-	<img src="<%= @profile_picture %>"></img>
+	<p>
+	  <strong>Is goalie:</strong>
+	  <%= @player.is_goalie %>
+	</p>
+
+	<canvas id="rating-placeholder"></canvas>
+
+	<%= link_to 'Edit', edit_player_path(@player) %> |
+	<%= link_to 'Back', players_path %>
+
+	<script>
+		var ratings = new Array();
+		<% @player.ratings.each do | rating | %>
+		var rating = new Object();
+		rating.rating = '<%= rating.rating %>';
+		rating.ratee = '<%= rating.user.name %>';
+		ratings.push(rating);
+		<% end %>
+		console.log(ratings);
+		generateRatingCircles();
+	</script>
 </div>
-<h1><%= @player.name %></h1>
-<p>
-  <strong>Last Active:</strong>
-  <%= @player.last_active %>
-</p>
-
-<p>
-  <strong>Is goalie:</strong>
-  <%= @player.is_goalie %>
-</p>
-
-<canvas id="rating-placeholder"></canvas>
-
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
-
-<script>
-	var players = new Array();
-	<% @player.ratings.each do | rating | %>
-	var player = new Object();
-	player.rating = '<%= rating.rating %>';
-	player.ratee = '<%= rating.user.name %>';
-	players.push(player);
-	<% end %>
-	generateRatingCircles();
-</script>
