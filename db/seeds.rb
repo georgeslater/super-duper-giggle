@@ -68,7 +68,7 @@ Rating.create([
 	{ user_id: users[0].id, player_id: players[18].id, rating: 4.5},
 	{ user_id: users[0].id, player_id: players[19].id, rating: 1.5},
 	{ user_id: users[0].id, player_id: players[20].id, rating: 2.5},
-	{ user_id: users[0].id, player_id: players[21].id, rating: 3.5}
+	{ user_id: users[0].id, player_id: players[21].id, rating: 3.5},
 	{ user_id: users[0].id, player_id: players[22].id, rating: 3.0},
 	{ user_id: users[0].id, player_id: players[23].id, rating: 2.0},
 	{ user_id: users[0].id, player_id: players[24].id, rating: 1.5}
