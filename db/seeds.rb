@@ -39,7 +39,10 @@ players = Player.create([
 	{ name: 'Nico Michel', is_goalie: false, facebook_id: '1371760486'},
 	{ name: 'Gonzalo Caceres', is_goalie: false, facebook_id: '572417860'},
 	{ name: 'Matt Connolly', is_goalie: false, facebook_id: '522271342'},
-	{ name: 'Jake Eames', is_goalie: false, facebook_id: '516332989'}
+	{ name: 'Jake Eames', is_goalie: false, facebook_id: '516332989'},
+	{ name: 'Gonzalo Pivotto', is_goalie: false, facebook_id: '1563260221'},
+	{ name: 'Matías Rodríguez', is_goalie: false, facebook_id: '100003605445168'},
+	{ name: 'Juan Ayala', is_goalie: false, facebook_id: '1147836014'}
 ])
 
 Rating.create([
@@ -66,5 +69,8 @@ Rating.create([
 	{ user_id: users[0].id, player_id: players[19].id, rating: 1.5},
 	{ user_id: users[0].id, player_id: players[20].id, rating: 2.5},
 	{ user_id: users[0].id, player_id: players[21].id, rating: 3.5}
+	{ user_id: users[0].id, player_id: players[22].id, rating: 3.0},
+	{ user_id: users[0].id, player_id: players[23].id, rating: 2.0},
+	{ user_id: users[0].id, player_id: players[24].id, rating: 1.5}
 
 ])
