@@ -10,13 +10,26 @@ class PlayersController < ApplicationController
     @player_image_urls = Hash.new
 
     @graph = Koala::Facebook::API.new(current_user.oauth_token)
-    
-    @pictures = @graph.batch do | batch_api |
-      @players.each do | player |
-        if player.facebook_id.present?
-          batch_api.get_picture(player.facebook_id)
+    offset = 0;
+    finished = false
+    @pictures = Array.new
+
+    while finished == false do
+      
+      temp_pictures = @graph.batch do | batch_api |
+        players_batch = @players.limit(50).offset(offset)
+        players_batch.each do | player |
+          if player.facebook_id.present?
+            batch_api.get_picture(player.facebook_id)
+          end
+
+          offset += 1
         end
+
+        finished = players_batch.size != 50
       end
+
+      @pictures.concat temp_pictures
     end  
 
     i = 0
@@ -28,7 +41,7 @@ class PlayersController < ApplicationController
       end  
     end
 
-    Rails.logger.debug(@pictures)
+    Rails.logger.debug(@player_image_urls)
     respond_with(@players)
   end
 
@@ -40,7 +53,7 @@ class PlayersController < ApplicationController
     if @player.facebook_id.present?
         @profile_picture = @graph.get_picture(@player.facebook_id, { 'type' => 'large' })   
     end
-    
+
     respond_with(@player)
   end
 

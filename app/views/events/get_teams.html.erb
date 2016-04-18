@@ -26,7 +26,7 @@
 					<% @players_to_show.each do | player_to_show | %>
 						<tr>
 							<td><%= link_to player_to_show.name, player_path(player_to_show) %></td>
-							<td><%= player_to_show.avg_player_rating %></td>
+							<td><%= number_with_precision(player_to_show.avg_player_rating, :precision => 1) %></td>
 							<td>
 								<% if player_to_show.is_goalie %>
 									&#10004;
@@ -49,7 +49,7 @@
 		</div>
 		<div id="max-rating">
 			<label>Maximum rating difference between any two teams</label>
-			<input type="number" step="0.5" min="0" value="0">
+			<input type="number" step="0.5" min="0" value="0.5">
 		</div>
 		<div class="generate-btn">
 			<button onclick="generateTeams();">Generate my teams, bitch!</button>

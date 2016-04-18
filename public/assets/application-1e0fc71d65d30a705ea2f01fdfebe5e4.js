@@ -11650,7 +11650,7 @@ function generateTeams(){
 
 					html += '<div class="list-group">';
 
-					html += '<span class="list-group-item active">'+generateRandomName()+' '+teamRatings[i]+'</span>';
+					html += '<span class="list-group-item active">'+generateRandomName()+'<div style="float:right;">'+teamRatings[i]+'</div></span>';
 
 					for(var j = 0; j < teamPlayers[i].length; j++){
 
@@ -11803,10 +11803,12 @@ var noun2 = [ "force", "bottom", "hole", "goatse", "testicle", "balls", "bucket"
 }).call(this);
 function generateRatingCircles(){
 	
-	var colors = ['lightgreen', 'lightblue', 'orange', 'yellow', 'rose'];
+	var colors = ['lightgreen', 'lightblue', 'orange', 'yellow', 'beige', 'lightsalmon', 'lightgrey', 'lightsteelblue'];
 
 	var canvas = document.getElementById('rating-placeholder');
   	if (canvas.getContext) {
+  		canvas.height = 300;
+  		canvas.width = 1000;
   		var radius = 50;
 	    var ctx = canvas.getContext('2d');
 

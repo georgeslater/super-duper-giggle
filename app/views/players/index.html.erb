@@ -26,7 +26,7 @@
             &#10004;
             <% end %>
           </td>
-          <td class="center"><%= player.avg_player_rating %></td>
+          <td class="center"><%= number_with_precision(player.avg_player_rating, :precision => 1) %></td>
           <td><%= link_to 'View', player %></td>
           <td><%= link_to 'Edit', edit_player_path(player) %></td>
           <td><%= link_to 'Delete', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>

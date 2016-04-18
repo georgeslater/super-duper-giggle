@@ -46,6 +46,7 @@ gem 'friendly_id', '~> 5.0.0'
 # Use unicorn as the app server
 gem 'unicorn'
 
+gem 'thin'
 # Use Capistrano for deployment
 #gem 'capistrano', '~> 3.3.0'
 

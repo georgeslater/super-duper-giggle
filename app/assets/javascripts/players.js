@@ -1,9 +1,11 @@
 function generateRatingCircles(){
 	
-	var colors = ['lightgreen', 'lightblue', 'orange', 'yellow', 'rose'];
+	var colors = ['lightgreen', 'lightblue', 'orange', 'yellow', 'beige', 'lightsalmon', 'lightgrey', 'lightsteelblue'];
 
 	var canvas = document.getElementById('rating-placeholder');
   	if (canvas.getContext) {
+  		canvas.height = 250;
+  		canvas.width = 1000;
   		var radius = 50;
 	    var ctx = canvas.getContext('2d');
 
