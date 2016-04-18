@@ -152,10 +152,10 @@ ratings.concat(generateRatings(players[8].id, nil, 2, 1.5, 2, 2, 1.5, 1, 2))
 ratings.concat(generateRatings(players[9].id, nil, 3, 3, 4, 4, 3.5, 4, 3.5))
 #Daniel Luddy
 ratings.concat(generateRatings(players[10].id, nil, 1.5, 1.5, nil, 1.5, 1.5, 1, 1.5))
-#Denis Correa
-ratings.concat(generateRatings(players[11].id, nil, 3, 2.5, 3, 3, 2.5, 3, 2.5))
 #David R Cook
-ratings.concat(generateRatings(players[12].id, nil, nil, 4, nil, 5, 3, 5, 5))
+ratings.concat(generateRatings(players[11].id, nil, nil, 4, nil, 5, 3, 5, 5))
+#Denis Correa
+ratings.concat(generateRatings(players[12].id, nil, 3, 2.5, 3, 3, 2.5, 3, 2.5))
 #Didier Flores
 ratings.concat(generateRatings(players[13].id, nil, 1.5, 2, 2, 2.5, 2, nil, nil))
 #Diego Camino
