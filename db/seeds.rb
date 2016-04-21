@@ -33,13 +33,13 @@ events = Event.create([
 
 users = User.create([
 	{ first_name: 'George', last_name: 'Slater', uid: '10101488162662259', name: 'George Slater' },
-	{ first_name: 'Greg', last_name: 'Symons', uid: '284200086', name: 'Greg Symons'},
-	{ first_name: 'Nick', last_name: 'Grant', uid: '574875567', name: 'Nick Grant'},
-	{ first_name: 'Dan', last_name: 'Luddy', uid: '743795038', name: 'Dan Luddy'},
-	{ first_name: 'Renzo', last_name: 'Marna', uid: '535124702', name: 'Renzo Marna'},
-	{ first_name: 'Jorge', last_name: 'Mucacos', uid: '100001512125227', name: 'Jorge Mucacos'},
-	{ first_name: 'Tom', last_name: 'Maher', uid: '657492581', name: 'Tom Maher'},
-	{ first_name: 'Gabbo', last_name: 'Resala', uid: '651321464', name: 'Gabbo Resala'}
+	{ first_name: 'Greg', last_name: 'Symons', uid: '10100389999911693', name: 'Greg Symons'},
+	{ first_name: 'Nick', last_name: 'Grant', uid: '10153955979225568', name: 'Nick Grant'},
+	{ first_name: 'Dan', last_name: 'Luddy', uid: '10154219631350039', name: 'Dan Luddy'},
+	{ first_name: 'Renzo', last_name: 'Marna', uid: '10154140717264703', name: 'Renzo Marna'},
+	{ first_name: 'Jorge', last_name: 'Mucacos', uid: '1070154356378292', name: 'Jorge Mucacos'},
+	{ first_name: 'Tom', last_name: 'Maher', uid: '10153627714072582', name: 'Tom Maher'},
+	{ first_name: 'Gabbo', last_name: 'Resala', uid: '10154102576891465', name: 'Gabbo Resala'}
 ])
 
 players = Player.create([

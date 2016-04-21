@@ -7,7 +7,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def is_admin
-  	@is_admin ||= current_user.uid == '10101488162662259' || current_user.uid = '574875567' if session[:user_id]
+
+  	admins = ['10101488162662259', '10100389999911693', '10153955979225568', '10154219631350039', '10154140717264703', '1070154356378292', '10153627714072582', '10154102576891465']
+
+  	@is_admin ||= admins.include? current_user.uid  if session[:user_id]
   end
   helper_method :is_admin
 end

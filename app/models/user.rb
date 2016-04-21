@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base  
   has_many :ratings
   has_many :notes
+  has_many :histories
 
   def self.from_omniauth(auth)
     where(uid: auth.uid).first_or_initialize.tap do |user|

@@ -7,41 +7,45 @@ class PlayersController < ApplicationController
   # GET /players.json
   def index
     @players = Player.all.order('Name ASC')
-    @player_image_urls = Hash.new
 
-    @graph = Koala::Facebook::API.new(current_user.oauth_token)
-    offset = 0;
-    finished = false
-    @pictures = Array.new
+    unless current_user.nil?
 
-    while finished == false do
-      
-      temp_pictures = @graph.batch do | batch_api |
-        players_batch = @players.limit(50).offset(offset)
-        players_batch.each do | player |
-          if player.facebook_id.present?
-            batch_api.get_picture(player.facebook_id)
+      @player_image_urls = Hash.new
+      @graph = Koala::Facebook::API.new(current_user.oauth_token)
+      offset = 0;
+      finished = false
+      @pictures = Array.new
+
+      while finished == false do
+        
+        temp_pictures = @graph.batch do | batch_api |
+          players_batch = @players.limit(50).offset(offset)
+          players_batch.each do | player |
+            if player.facebook_id.present?
+              batch_api.get_picture(player.facebook_id)
+            end
+
+            offset += 1
           end
 
-          offset += 1
+          finished = players_batch.size != 50
         end
 
-        finished = players_batch.size != 50
+        @pictures.concat temp_pictures
+      end  
+
+      i = 0
+
+      @players.each do | player |
+        if player.facebook_id.present?
+          @player_image_urls[player.id] = @pictures[i]
+          i+=1
+        end  
       end
 
-      @pictures.concat temp_pictures
-    end  
-
-    i = 0
-
-    @players.each do | player |
-      if player.facebook_id.present?
-        @player_image_urls[player.id] = @pictures[i]
-        i+=1
-      end  
+      Rails.logger.debug(@player_image_urls)
     end
 
-    Rails.logger.debug(@player_image_urls)
     respond_with(@players)
   end
 

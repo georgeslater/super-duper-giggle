@@ -1,6 +1,7 @@
 class Player < ActiveRecord::Base
 	has_many :ratings
 	has_many :notes
+	has_many :histories
 
 	validates :name, :presence => true
 	validates :facebook_id, :presence => true

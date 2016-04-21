@@ -12,9 +12,14 @@
 	<body>
 		<div id="user-widget">
 			<%= render "layouts/header" %>
-			
 			<% if current_user %>
-				<%= yield %>
+				<% if is_admin %>
+					<%= yield %>
+				<% else %>
+					<div class="alert alert-danger" role="alert">
+						<strong>Oh Dear!</strong> It would appear you are not an admin of the Expat group.
+					</div>
+				<% end %>
 			<% else %>
 			    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
 			<% end %>

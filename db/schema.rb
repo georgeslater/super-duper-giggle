@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416025747) do
+ActiveRecord::Schema.define(version: 20160419040718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(version: 20160416025747) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "histories", force: :cascade do |t|
+    t.integer  "player_id"
+    t.decimal  "old_rating"
+    t.decimal  "new_rating"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "histories", ["player_id"], name: "index_histories_on_player_id", using: :btree
+  add_index "histories", ["user_id"], name: "index_histories_on_user_id", using: :btree
+
   create_table "notes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "player_id"
@@ -50,11 +62,12 @@ ActiveRecord::Schema.define(version: 20160416025747) do
 
   create_table "players", force: :cascade do |t|
     t.boolean  "is_goalie"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "name"
     t.string   "facebook_id"
     t.date     "last_active"
+    t.text     "app_facebook_Id"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -82,6 +95,8 @@ ActiveRecord::Schema.define(version: 20160416025747) do
     t.datetime "oauth_expires_at"
   end
 
+  add_foreign_key "histories", "players"
+  add_foreign_key "histories", "users"
   add_foreign_key "notes", "players"
   add_foreign_key "notes", "users"
 end

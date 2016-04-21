@@ -36,8 +36,21 @@ class EventsController < ApplicationController
 
 				if player.present?
 					@players_to_show.push(player)
-					player.last_active = start_time
-					player.save!
+					changed = false
+
+					if player['last_active'] != start_time
+						player.last_active = start_time
+						changed = true
+					end
+
+					if player['app_facebook_id'].nil?
+						player.app_facebook_Id = attendee['id']
+						changed = true
+					end
+
+					if changed == true
+						player.save!
+					end
 				else
 					@players_to_create.push(attendee['name'])
 				end
