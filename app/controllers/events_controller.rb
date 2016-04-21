@@ -44,7 +44,7 @@ class EventsController < ApplicationController
 					end
 
 					if player['app_facebook_id'].nil?
-						player.app_facebook_Id = attendee['id']
+						player.app_facebook_id = attendee['id']
 						changed = true
 					end
 
